@@ -1,9 +1,13 @@
-# Parachains
-> 在Rococo上测试    
+# 平行链
+>原文链接：https://wiki.polkadot.network/zh-CN/docs/learn-parachains   
+翻译：buncsj(discord)
+
+>**在Rococo上测试**   
 关于如何参与Rococo的众贷和平行链拍卖测试的信息，请参阅平行链开发指南上的[Rococo内容](https://wiki.polkadot.network/zh-CN/docs/build-pdk##testing-a-parachains:-rococo-testnet)。
 
 平行链是一种特定于应用程序的数据结构，它们对于中继链的验证人来说是全局一致并且是可验证的。他们从平行于中继链的概念中取名。最常见的是平行链会采用区块链的形式，但没有具体的需要是实际的区块链。
 
+![parachain](https://cdn.jsdelivr.net/gh/VegeBun-csj/Images/771651159350_.pic.jpg)
 
 由于它们的并行性，所以能够并行地处理事务，实现波卡系统的可伸缩性。它们共享整个网络的安全性，并可以通过XCM格式与其他平行链进行通信。
 
@@ -58,7 +62,7 @@
 ### 什么是“平行链共识”
 “平行链共识”是特别的，因为它将遵循波卡中继链。平行链不能使用其他具有自身终结性的共识算法。只有主权链(必须通过平行链桥接到中继链链)才能决定自己的共识。平行链决定了如何编写代码以及由谁编写代码。波卡保证有效的状态转换。在中继链的上下文之外执行一个块终结性会超出了波卡提供的信任范围。
 
-`不是基于Substrate构建的平行链呢？`   
+**不是基于Substrate构建的平行链呢?**   
 Substrate提供了FRAME Pallets作为其框架的一部分，从而实现无缝地构建基于Rust的区块链。FRAME的一部分是Pallet，从而用于共识。波卡作为一个基于Substrate的链，依赖于BABE作为区块产生的方案，而GRANDPA作为其共识机制最终完结性的一部分。总的来说，这是一个[混合共识模型](https://wiki.polkadot.network/zh-CN/docs/learn-consensus#hybrid-consensus)，其中块的产生和块的终结是分开的。平行链只需要生成块，因为它们可以依赖于中继链来验证状态转换。因此，平行链可以自己产生区块，其中收集人是作为区块的生产者，尽管平行链不是基于Substrate构建的。
 
 ### 平行链的插槽如何分配？

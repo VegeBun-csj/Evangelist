@@ -3,4 +3,5 @@
 
 - Transalate some chinese doc about Substrate
 - Some article about my development ideas
+- some pallets dev
 
